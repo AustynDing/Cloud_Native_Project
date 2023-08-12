@@ -1,0 +1,24 @@
+# permissions for end users to edit rollingmonitors.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: rollingmonitor-editor-role
+rules:
+- apiGroups:
+  - demo.nju04.io
+  resources:
+  - rollingmonitors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - demo.nju04.io
+  resources:
+  - rollingmonitors/status
+  verbs:
+  - get
