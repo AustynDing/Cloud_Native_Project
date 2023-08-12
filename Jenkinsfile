@@ -12,7 +12,7 @@ pipeline {
             }
             steps {//第一步：克隆代码，为了build image
                 echo "1. Git Clone Stage"
-                git branch: 'main', url: "https://github.com/lyxx2535/Cloud_Native_Project.git"
+                git branch: 'master', url: "https://gitee.com/austynDing/cloud_-native_-project_0.git"
             }
         }
         stage('Maven Build') {//第二步：maven打包
@@ -60,7 +60,7 @@ node('slave') {
 //         }
         stage('Clone YAML') {//第五步：拉取代码，为了部署到k8s
             echo "5. Git clone YAML To Slave"
-            git branch: 'main', url: "https://github.com/lyxx2535/Cloud_Native_Project.git"
+            git branch: 'master', url: "https://gitee.com/austynDing/cloud_-native_-project_0.git"
 
         }
         stage('YAML') {//第六步：替换YAML文件变量

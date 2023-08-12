@@ -24,7 +24,7 @@ type RollingMonitorReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-const MonitorFinalizer = "nju04.io.tos.monitored/finalizer"
+const MonitorFinalizer = "nju27.io.tos.monitored/finalizer"
 
 //+kubebuilder:rbac:groups=demo.transwarp.io,resources=rollingmonitors,verbs=get;list;watch;create;update;patch;delete
 //+kubebuilder:rbac:groups=demo.transwarp.io,resources=rollingmonitors/status,verbs=get;update;patch

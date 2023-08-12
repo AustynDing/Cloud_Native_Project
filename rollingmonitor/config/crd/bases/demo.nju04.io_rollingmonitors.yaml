@@ -5,10 +5,10 @@ metadata:
     controller-gen.kubebuilder.io/version: v0.4.1
   creationTimestamp: null
   # metadata.name的内容是由"复数名.分组名"构成
-  name: rollingmonitors.demo.nju04.io
+  name: rollingmonitors.demo.nju27.io
 spec:
   # 分组名，在REST API中也会用到的，格式是: /apis/分组名/CRD版本
-  group: demo.nju04.io
+  group: demo.nju27.io
   names:
     kind: RollingMonitor
     listKind: RollingMonitorList

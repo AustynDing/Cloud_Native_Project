@@ -25,7 +25,7 @@ rules:
   verbs:
   - update
 - apiGroups:
-  - demo.nju04.io
+  - demo.nju27.io
   resources:
   - rollingmonitors/status
   verbs:

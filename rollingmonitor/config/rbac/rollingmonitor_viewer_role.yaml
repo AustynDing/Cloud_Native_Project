@@ -5,7 +5,7 @@ metadata:
   name: rollingmonitor-viewer-role
 rules:
 - apiGroups:
-  - demo.nju04.io
+  - demo.nju27.io
   resources:
   - rollingmonitors
   verbs:
@@ -13,7 +13,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - demo.nju04.io
+  - demo.nju27.io
   resources:
   - rollingmonitors/status
   verbs:

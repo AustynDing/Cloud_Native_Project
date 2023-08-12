@@ -8,4 +8,4 @@ webhook:
   port: 9443
 leaderElection:
   leaderElect: true
-  resourceName: c4fbea18.nju04.io
+  resourceName: c4fbea18.nju27.io

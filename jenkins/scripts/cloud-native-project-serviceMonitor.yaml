@@ -16,4 +16,4 @@ spec:
       app: cloud-native-project
   namespaceSelector:
     matchNames:
-    - nju04
+    - nju27

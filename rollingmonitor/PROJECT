@@ -1,16 +1,16 @@
-domain: nju04.io
+domain: nju27.io
 layout:
 - go.kubebuilder.io/v3
 projectName: demo
-repo: nju04.io/tos/demo
+repo: nju27.io/tos/demo
 resources:
 - api:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: nju04.io
+  domain: nju27.io
   group: demo
   kind: RollingMonitor
-  path: nju04.io/tos/demo/api/v1alpha1
+  path: nju27.io/tos/demo/api/v1alpha1
   version: v1alpha1
 version: "3"

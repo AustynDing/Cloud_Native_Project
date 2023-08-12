@@ -4,7 +4,7 @@ metadata:
   labels:
     app: cloud-native-project
   name: cloud-native-project
-  namespace: nju04
+  namespace: nju27
 spec:
   replicas: 1  #运行容器的副本数
   selector:
@@ -21,16 +21,16 @@ spec:
         app: cloud-native-project
     spec:
       containers: #docker容器的配置
-      - image: harbor.edu.cn/nju04/cloud-native-project:{VERSION} #pull镜像的地址
+      - image: harbor.edu.cn/nju27/cloud-native-project:{VERSION} #pull镜像的地址
         name: cloud-native-project
       imagePullSecrets:
-        - name: nju04
+        - name: nju27
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: cloud-native-project
-  namespace: nju04
+  namespace: nju27
   labels:
     app: cloud-native-project
 spec:
