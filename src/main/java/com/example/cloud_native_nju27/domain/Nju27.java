@@ -1,10 +1,10 @@
-package com.example.cloudnativeproject.domain;
+package com.example.cloud_native_nju27.domain;
 
-public class Greeting {
+public class Nju27 {
 
     private final String msg;
 
-    public Greeting(String msg) {
+    public Nju27(String msg) {
         this.msg = msg;
     }
 

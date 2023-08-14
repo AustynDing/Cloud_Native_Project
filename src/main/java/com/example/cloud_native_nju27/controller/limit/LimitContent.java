@@ -1,4 +1,4 @@
-package com.example.cloudnativeproject.controller.limit;
+package com.example.cloud_native_nju27.controller.limit;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -19,11 +19,11 @@ import java.util.*;
 @Aspect
 @Order
 @Component
-public class RequestLimitContract {
+public class LimitContent {
 
     private Map<String, Integer> redisTemplate = new HashMap<>();//记录每个接口的访问次数
 
-    @Pointcut("@annotation(RequestLimit)")
+    @Pointcut("@annotation(com.example.cloud_native_nju27.controller.limit.Limit)")
     public void RequestLimit(){
 
     }
@@ -35,7 +35,7 @@ public class RequestLimitContract {
 
         String url = request.getRequestURI();
         // 获取自定义注解
-        RequestLimit rateLimiter = getRequestLimit(joinPoint);
+        Limit rateLimiter = getRequestLimit(joinPoint);
 
         String key = "req_limit_".concat(url); //hash的key
         if (!redisTemplate.containsKey(key)) { //接口未访问过
@@ -43,8 +43,8 @@ public class RequestLimitContract {
         } else {
             redisTemplate.put(key, redisTemplate.get(key) + 1);
             int count = redisTemplate.get(key);
-            if (count > rateLimiter.count()) {
-                throw new RequestLimitException();
+            if (count >= rateLimiter.count()) {
+                throw new LimitException();
             }else {
                 Timer timer = new Timer();
                 TimerTask task = new TimerTask() {    //创建一个新的计时器任务。
@@ -60,12 +60,12 @@ public class RequestLimitContract {
         return joinPoint.proceed();
     }
 
-    private RequestLimit getRequestLimit(final JoinPoint joinPoint) {
+    private Limit getRequestLimit(final JoinPoint joinPoint) {
         Method[] methods = joinPoint.getTarget().getClass().getDeclaredMethods();
         String name = joinPoint.getSignature().getName();
         if (!StringUtils.isEmpty(name)) {
             for (Method method : methods) {
-                RequestLimit annotation = method.getAnnotation(RequestLimit.class);
+                Limit annotation = method.getAnnotation(Limit.class);
                 if (!Objects.isNull(annotation) && name.equals(method.getName())) {
                     return annotation;
                 }

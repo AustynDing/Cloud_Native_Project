@@ -1,4 +1,4 @@
-package com.example.cloudnativeproject.controller.limit;
+package com.example.cloud_native_nju27.controller.limit;
 
 import java.lang.annotation.*;
 
@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-public @interface RequestLimit {
+public @interface Limit {
     /**
      * 允许访问的次数，默认值MAX_VALUE
      */
